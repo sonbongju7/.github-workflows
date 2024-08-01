@@ -21,7 +21,7 @@ jobs:
     - name: Deploy to Lightsail
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.LIGHTSAIL_USER }}@${{ secrets.LIGHTSAIL_HOST }} << 'EOF'
-          cd /path/to/your/project
+          cd /var/www
           git pull origin main
           sudo systemctl restart your-service
         EOF
